@@ -64,12 +64,40 @@ for (let btn of osf_serviceBtns) {
 }
 
 
-//To be changed to close btn
-// osf_payBtn.addEventListener('click', () => {
-//    
-// })
+////Checkboxes validation (copied from the internet)
+(function() {
+    const form = document.querySelector('.day-grid');
+    const checkboxes = form.querySelectorAll('input[type=checkbox]');
+    const checkboxLength = checkboxes.length;
+    const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
 
+    function init() {
+        if (firstCheckbox) {
+            for (let i = 0; i < checkboxLength; i++) {
+                checkboxes[i].addEventListener('change', checkValidity);
+            }
 
+            checkValidity();
+        }
+    }
+
+    function isChecked() {
+        for (let i = 0; i < checkboxLength; i++) {
+            if (checkboxes[i].checked) return true;
+        }
+
+        return false;
+    }
+
+    function checkValidity() {
+        const errorMessage = !isChecked() ? 'At least one checkbox must be selected.' : '';
+        firstCheckbox.setCustomValidity(errorMessage);
+    }
+
+    init();
+})();
+
+////
 
 osf_healBtn.addEventListener('click', () => {
     osf_goToStage(osf_ailments)
@@ -100,8 +128,11 @@ osf_backBtn.addEventListener('click', () => {
 
 })
 osf_finalBtn.addEventListener('click', () => {
-    updating()
-    osf_goToStage(osf_final)
+    updating();
+    if (currDate === "" || currDate === "Invalid Date" || currDate === undefined) {
+        document.getElementById('osf-invalid-date').style.display = "block"
+    } else(
+        osf_goToStage(osf_final))
 })
 
 
@@ -181,16 +212,7 @@ function osf_goToStage(stage_name, percent) {
     } else if (osf_service.classList.contains('active-state')) {
         osf_service.style.display = "flex"
     }
-    if (osf_isActive(osf_calendar)) {
-        const dateDivs = document.querySelectorAll('.tavo-calendar__day');
-        dateDivs.forEach((div) => {
-            div.addEventListener('click', () => {
-                getDateDummy();
-                document.getElementById('f-sel-date').innerHTML = currDate;
-            })
-        })
 
-    }
 
 
 
@@ -200,7 +222,7 @@ function osf_goToStage(stage_name, percent) {
 
 
 
-var checkboxeschecked = document.querySelectorAll('input[name="days"]:checked');
+
 
 
 function updating() {
@@ -251,6 +273,14 @@ function updating() {
 
 
 }
+
+
+
+
+
+
+
+
 ////////    CALENDAR STARTS HERE 
 
 /*!

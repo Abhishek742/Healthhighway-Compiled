@@ -308,23 +308,23 @@
                     <div class="osf-content " id="choose-timing">
                         <h3 class="osf-heading ">Choose a time slot</h3>
                         <form class="time-grid">
-                            <input type="radio" id="t1" name="timing" value="6am" required>
+                            <input type="radio" id="t1" name="timing" value="6:00 AM" required>
                             <label for="t1">6:00 AM</label>
-                            <input type="radio" id="t2" name="timing" value="7am">
+                            <input type="radio" id="t2" name="timing" value="7:00 AM">
                             <label for="t2">7:00 AM</label>
-                            <input type="radio" id="t3" name="timing" value="8am">
+                            <input type="radio" id="t3" name="timing" value="8:00 AM">
                             <label for="t3">8:00 AM</label>
-                            <input type="radio" id="t4" name="timing" value="9am">
+                            <input type="radio" id="t4" name="timing" value="9:00 AM">
                             <label for="t4">9:00 AM</label>
-                            <input type="radio" id="t5" name="timing" value="4pm">
+                            <input type="radio" id="t5" name="timing" value="4:00 PM">
                             <label for="t5">4:00 PM</label>
-                            <input type="radio" id="t6" name="timing" value="5pm">
+                            <input type="radio" id="t6" name="timing" value="5:00 PM">
                             <label for="t6">5:00 PM</label>
-                            <input type="radio" id="t7" name="timing" value="6pm">
+                            <input type="radio" id="t7" name="timing" value="6:00 PM">
                             <label for="t7">6:00 PM</label>
-                            <input type="radio" id="t8" name="timing" value="7pm">
+                            <input type="radio" id="t8" name="timing" value="7:00 PM">
                             <label for="t8">7:00 PM</label>
-                            <input type="radio" id="t9" name="timing" value="8pm">
+                            <input type="radio" id="t9" name="timing" value="8:00 PM">
                             <label for="t9">8:00 PM</label>
 
                             <button class="osf-button">Next</button>
@@ -335,7 +335,7 @@
                         <h3 class="osf-heading ">Your Fitness Routine</h3>
 
                         <form class="day-grid">
-                            <input type="checkbox" id="day1" name="days" value="Mon" required>
+                            <input type="checkbox" id="day1" name="days" value="Mon">
                             <label for="day1">Mon</label>
                             <input type="checkbox" id="day2" name="days" value="Tue">
                             <label for="day2">Tue</label>
@@ -356,9 +356,9 @@
                     <div class="osf-content " id="fitness-calendar">
                         <h3 class="osf-heading ">Choose a starting date</h3>
                         <div id="my-calendar"></div>
-                        <p>Selected date: <span id="f-sel-date"></span></p>
+                        <p id="osf-invalid-date">Please select a date</p>
 
-                        <button class="osf-button final-btn" style="margin-top: 1em;">Next</button>
+                        <button class="osf-button final-btn" style="margin-top: 1em;" onclick="getDateDummy();">Next</button>
 
 
 
@@ -493,29 +493,29 @@
         <!-- USP Section (START) -->
         <section id="usp" class="usp-section">
             <div class="usp-one">
-                <img src="images/usp-one.png" alt="yoga for everyone" />
+                <img src="images/pricingusp1.svg" alt="yoga for everyone" />
                 <div class="left-item">
-                    <h3 class="usp-heading">Yoga for <span>Everyone</span></h3>
+                    <h3 class="usp-heading"><span>One-on-One</span> Interaction</h3>
                     <p class="usp-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor rutrum, efficitur neque sit amet, pretium erat. Nullam et elit sit amet sapien faucibus mollis eu et diam.
+                        Practice Yoga with a personal instructor to guide you through your fitness journey. Easy to use video call format that allows maximum interaction.
                     </p>
                 </div>
             </div>
             <div class="usp-two">
-                <img src="images/usp-two.png" alt="yoga for everything" />
+                <img src="images/pricingusp2.svg" alt="yoga for everything" />
                 <div class="right-item">
-                    <h3 class="usp-heading">Yoga for <span>Everything</span></h3>
+                    <h3 class="usp-heading"><span>Flexible </span>Timings</h3>
                     <p class="usp-content">
-                        From obesity to increasing stamina we provide yoga for everything be it anything. Something along this line should be our explanation
+                        There is no perfect time to work on your fitness. Schedule a session with your instructor whenever you like as per your convenience.
                     </p>
                 </div>
             </div>
             <div class="usp-three">
-                <img src="images/usp-three.png" alt="yoga for everytime" />
+                <img src="images/pricingusp3.svg" alt="yoga for everytime" />
                 <div class="left-item">
-                    <h3 class="usp-heading">Yoga for <span>Everytime</span></h3>
+                    <h3 class="usp-heading"><span>Personal</span> Diet Coach</h3>
                     <p class="usp-content">
-                        No matter you are a early bird or night owl we are always there for you. We have personalized curated sessions based on your needs and your timeing with 1v1 interaction
+                        Top your fitness routine with a daily diet plan designed by an expert diet coach. Each coach will develop a personalized plan tailored to your health and lifestyle.
                     </p>
                 </div>
             </div>
